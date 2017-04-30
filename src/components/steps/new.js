@@ -16,10 +16,7 @@ class StepsNew extends Component {
 
   onSubmit(values) {
     const { project_id } = this.props;
-    this.props.createStep(project_id, values)
-    .then(() => {
-      browserHistory.push(`/projects/${project_id}`);
-    });
+    this.props.createStep(project_id, values);
   }
 
   render() {

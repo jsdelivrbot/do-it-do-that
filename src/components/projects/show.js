@@ -19,7 +19,21 @@ class ProjectsShow extends Component {
   }
 
   renderSteps() {
-    console.log(this.props.steps.length);
+    return this.props.steps.map((step) => {
+      return (
+        <div className="row" key={step.id}>
+          <div className="col-sm-2">
+            {step.done}
+          </div>
+          <div className="col-sm-8">
+            {step.content}
+          </div>
+          <div className="col-sm-2">
+            delete
+          </div>
+        </div>
+      );
+    });
   }
 
   render() {
@@ -35,9 +49,7 @@ class ProjectsShow extends Component {
           <span>{project.description}</span>
         </div>
         <div className="panel-body">
-          <div className="row">
-            {steps.length ? this.renderSteps() : 'No steps'}
-          </div>
+          {steps.length ? this.renderSteps() : 'No steps'}
           <hr/>
           <div className="text-center">
             <StepsNew project_id={project.id} />
