@@ -29,7 +29,7 @@ class ProjectsShow extends Component {
       return (
         <div className="row vert-offset-top-2" key={step.id}>
           <div className="col-sm-2">
-            <input name="done" type="checkbox" checked={step.done} onChange={()=>{this.onStepCheck(project,step)}} />
+            <input name="done" type="checkbox" className="big-checkbox" checked={step.done} onChange={()=>{this.onStepCheck(project,step)}} />
           </div>
           <div className="col-sm-8">
             {step.content}
